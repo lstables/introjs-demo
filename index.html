@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>IntroJS Demo</title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="http://introjs.com/introjs.css">
+</head>
+<body>
+
+
+
+<div class="container">
+
+      <div class="jumbotron">
+        <h1 id="step1">Without Element</h1>
+        <p id="step4" class="lead">This example shows the introductions without focusing on elements.</p>
+        <a class="btn btn-large btn-success" href="javascript:void(0);" onclick="startIntro();">Show me how</a>
+      </div>
+
+      <hr>
+
+      <div class="row-fluid marketing">
+        <div id="step2" class="span6">
+          <h4>Section One</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mollis augue a neque cursus ac blandit orci faucibus. Phasellus nec metus purus.</p>
+
+          <h4>Section Two</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mollis augue a neque cursus ac blandit orci faucibus. Phasellus nec metus purus.</p>
+
+          <h4>Section Three</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mollis augue a neque cursus ac blandit orci faucibus. Phasellus nec metus purus.</p>
+        </div>
+
+        <div id="step3" class="span6">
+          <h4>Section Four</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mollis augue a neque cursus ac blandit orci faucibus. Phasellus nec metus purus.</p>
+
+
+          <h4>Section Five</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mollis augue a neque cursus ac blandit orci faucibus. Phasellus nec metus purus.</p>
+
+          <h4>Section Six</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mollis augue a neque cursus ac blandit orci faucibus. Phasellus nec metus purus.</p>
+        </div>
+      </div>
+
+      <hr>
+
+    </div>
+
+
+
+<script type="text/javascript" src="http://introjs.com/intro.js"></script>
+    <script type="text/javascript">
+      function startIntro(){
+        var intro = introJs();
+          intro.setOptions({
+            steps: [
+              { 
+                intro: "Hello world!"
+              },
+              { 
+                intro: "You <b>don't need</b> to define element to focus, this is a floating tooltip."
+              },
+              {
+                element: document.querySelector('#step1'),
+                intro: "This is a tooltip."
+              },
+              {
+                element: document.querySelectorAll('#step2')[0],
+                intro: "Ok, wasn't that fun?",
+                position: 'right'
+              },
+              {
+                element: '#step3',
+                intro: 'More features, more fun.',
+                position: 'left'
+              },
+              {
+                element: '#step4',
+                intro: "Another step.",
+                position: 'bottom'
+              },
+              {
+                element: '#step5',
+                intro: 'Get it, use it.'
+              }
+            ]
+          });
+
+          intro.start();
+      }
+    </script>
+</body>
+</html>
